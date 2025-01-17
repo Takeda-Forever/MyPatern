@@ -66,7 +66,7 @@ int main()
 
 ## Description:
 How's look my patern: 
->namespace MySpace:<
+>namespace MySpace:>
 	>class Application:
 	>	class Window;
 	>	class Video <- Window;
