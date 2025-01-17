@@ -67,15 +67,16 @@ int main()
 ## Description:
 How's look my patern: 
 >namespace MySpace:
->class Application:
 >
->	class Window;
+>- class Application:
 >
->	class Video <- Window;
+>	-- class Window;
 >
->	class Audio;
+>	-- class Video <- Window;
 >
->	class Options <- Video, Audio;
+>	-- class Audio;
+>
+>	-- class Options <- Video, Audio;
 
 
 The `Application` class acts as the core of the program, providing access to window and settings management. Key features include:
