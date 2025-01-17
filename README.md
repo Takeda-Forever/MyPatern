@@ -132,7 +132,7 @@ int main()
 
 ```
 
-![image.png]
+![[image.png]]
 
 
 ## Description:
