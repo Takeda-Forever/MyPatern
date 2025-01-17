@@ -53,7 +53,8 @@ namespace mySpace
 
 	Application app;
 }
-
+```
+```cpp
 int main()
 {
 	mySpace::app("MOUSE").getOption().setWindow(1280, 800).setSound(80);
@@ -62,7 +63,6 @@ int main()
 	return EXIT_SUCCESS;
 }
 ```
-![[image.png]]
 
 ## Description:
 How's look my patern: 
