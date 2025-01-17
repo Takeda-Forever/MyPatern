@@ -70,9 +70,13 @@ How's look my patern:
 >class Application:
 >
 >	class Window;
+>
 >	class Video <- Window;
+>
 >	class Audio;
+>
 >	class Options <- Video, Audio;
+
 
 The `Application` class acts as the core of the program, providing access to window and settings management. Key features include:
 - An overloaded `operator()` for initialization, which returns a pointer to an `Options` object for further configuration.
