@@ -132,7 +132,7 @@ int main()
 
 ```
 
-![[Architectura.canvas]]
+![[image.png]]
 
 
 ## Description:
