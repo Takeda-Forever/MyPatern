@@ -68,7 +68,7 @@ int main()
 How's look my patern: 
 >namespace MySpace:
 >
->\- class Application:
+>> class Application:
 >
 >	-- class Window;
 >
