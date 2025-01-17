@@ -1,8 +1,4 @@
 ```cpp
-#include <iostream>
-#include <memory> 
-#include <string>
-
 namespace mySpace
 {
 	enum : bool {
@@ -30,15 +26,7 @@ namespace mySpace
 
 		class Video : public Window
 		{
-			enum Level
-			{
-				AUTO,
-				LOW,
-				MEDIUM,
-				HIGH,
-				ULTRA
-			};
-
+			enum Level;
 			struct Graph
 			{
 				bool vfx = DEFAULT_VFX;
@@ -58,65 +46,21 @@ namespace mySpace
 			std::unique_ptr<Video> vid;
 
 		public:
-			Options& setSound(int volume)
-			{
-				aud = std::make_unique<Audio>(volume);
-				return *this;
-			}
-
-			Options& setWindow(int w, int h)
-			{
-				vid = std::make_unique<Video>(w, h);
-				return *this;
-			}
+			Options& setSound(int volume);
+			Options& setWindow(int w, int h)l;
 			Options() = default;
-			Window* getWindow()
-			{
-				if (vid) {
-					return vid->getWindow();
-				}
-				throw std::runtime_error("Video is not initialized.");
-			}
+			Window* getWindow();
 		};
 
 		std::unique_ptr<Options> op;
-
-
-		bool isInit()
-		{
-			if (!op)
-			{
-				return false;
-			}
-			return true;
-		}
+		bool isInit();
 
 	public:
-		Application& operator()(const std::string& _title)
-		{
-			title = _title;
-			op = std::make_unique<Options>();
-			return *this;
-		}
+		Application& operator()(const std::string& _title);
+		Options& getOption();
 
-		Options& getOption()
-		{
-			if (!isInit())
-			{
-				throw std::runtime_error("Options are not initialized.");
-			}
-			return *op;
-		}
-
-		int getWindowWidth()
-		{
-			return getOption().getWindow()->width;
-		}
-
-		int getWindowHeight()
-		{
-			return getOption().getWindow()->height;
-		}
+		int getWindowWidth();
+		int getWindowHeight();
 	};
 
 	Application app;
@@ -129,7 +73,6 @@ int main()
 	std::cout << "Window width: " << mySpace::app.getWindowWidth() << std::endl;
 	return EXIT_SUCCESS;
 }
-
 ```
 
 ![[image.png]]
