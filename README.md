@@ -1,11 +1,6 @@
 ```cpp
 namespace mySpace
 {
-	enum : bool {
-		DEFAULT_AUTO_RESIZE = 0,
-		DEFAULT_VFX = 0,
-	};
-
 	class Application
 	{
 		std::string title;
@@ -27,14 +22,8 @@ namespace mySpace
 		class Video : public Window
 		{
 			enum Level;
-			struct Graph
-			{
-				bool vfx = DEFAULT_VFX;
-				bool auto_resize = DEFAULT_AUTO_RESIZE;
-				int texture = Level::AUTO;
-				int shadow = Level::AUTO;
-			} graphics;
-
+			struct Graph{
+			}graphics;
 		public:
 			Video(int w = 800, int h = 600) : Window(w, h) {}
 			Window* getWindow() { return this; }
@@ -44,7 +33,6 @@ namespace mySpace
 		{
 			std::unique_ptr<Audio> aud;
 			std::unique_ptr<Video> vid;
-
 		public:
 			Options& setSound(int volume);
 			Options& setWindow(int w, int h)l;
@@ -74,9 +62,7 @@ int main()
 	return EXIT_SUCCESS;
 }
 ```
-
 ![[image.png]]
-
 
 ## Description:
 How's look my patern: 
